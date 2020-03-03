@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Comision PHP</title>
+    <script type="text/javascript">
+      var verificar = function() {
+        var numero = document.getElementById("numero").value;
+        document.getElementById("total").innerHTML = "Total de digitos" + numero.toString().length;
+
+        var sumaPar = 0;
+        var sumaImpar = 0;
+        var rem = 0;
+
+        for (var i = 0; i < numero.toString().length; i++) {
+          rem = numero % 10;
+          if (rem % 2 == 1) {
+            sumaPar += rem;
+            console.log(sumaPar);
+          } else {
+            sumaImpar += rem;
+            console.log(sumaImpar);
+          }
+          numero = numero / 10;
+        }
+
+        document.getElementById("sumaPar").innerHTML = "Suma de Pares = " + sumaPar;
+        document.getElementById("sumaImpar").innerHTML = "Suma de Impares = " + sumaImpar;
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <p>Numero <input type="number" id="numero" /></p>
+      <p><input type="button" value="Calcular" onclick="verificar()"/></p>
+      <p id="total"></p>
+      <p id="sumaPar"></p>
+      <p id="sumaImpar"></p>
+    </form>
+  </body>
+</html>

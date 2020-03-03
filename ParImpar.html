@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Comision PHP</title>
+    <script type="text/javascript">
+      var verificar = function() {
+        var numero = document.getElementById("numero").value;
+        if (numero == 0) {
+          document.getElementById('respuesta').innerHTML = "El numero ingresado es nulo";
+        } else {
+          if (numero % 2 == 1 || numero % 2 == -1) {
+            document.getElementById('respuesta').innerHTML = "El numero ingresado es impar";
+          } else {
+            document.getElementById('respuesta').innerHTML = "El numero ingresado es par";
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <p>Numero <input type="number" id="numero" /></p>
+      <p><input type="button" value="Calcular" onclick="verificar()"/></p>
+      <p id="respuesta"></p>
+    </form>
+  </body>
+</html>
